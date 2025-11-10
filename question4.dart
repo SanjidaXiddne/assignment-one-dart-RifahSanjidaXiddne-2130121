@@ -1,4 +1,5 @@
 // Question 4: Inheritance & Polymorphism (Difficulty: 4/5) ⭐⭐⭐⭐
+// TODO: Complete the following requirements:
 
 // 1. Abstract Class Vehicle:
 //    - Properties: String brand, String model, int year
@@ -18,11 +19,13 @@ abstract class Vehicle {
   
   // Concrete method
   void displayInfo() {
+    // TODO: Display vehicle information
     print("Vehicle Info: $year $brand $model");
   }
   
-  // Calculate vehicle age (current year - vehicle year)
+  // Add a method to calculate vehicle age (current year - vehicle year)
   int calculateAge() {
+    // TODO: Calculate and return vehicle age
     return DateTime.now().year - year;
   }
 }
@@ -38,16 +41,19 @@ class Car extends Vehicle {
   
   @override
   void start() {
-    print("Starting the car engine for $brand $model...");
+    // TODO: Implement car start method
+    print("Starting the car engine...");
   }
   
   @override
   void stop() {
-    print("Stopping the car engine for $brand $model...");
+    // TODO: Implement car stop method
+    print("Stopping the car engine...");
   }
   
   @override
   void displayInfo() {
+    // TODO: Override to show car-specific info
     print("Vehicle Info: $year $brand $model ($numberOfDoors doors)");
   }
 }
@@ -62,33 +68,37 @@ class Motorcycle extends Vehicle {
   
   @override
   void start() {
-    print("Starting the motorcycle engine for $brand $model...");
+    // TODO: Implement motorcycle start method
+    print("Starting the motorcycle engine...");
   }
   
   @override
   void stop() {
-    print("Stopping the motorcycle engine for $brand $model...");
+    // TODO: Implement motorcycle stop method
+    print("Stopping the motorcycle engine...");
   }
   
   @override
   void displayInfo() {
+    // TODO: Override to show motorcycle-specific info
     print("Vehicle Info: $year $brand $model (Has windshield: $hasWindshield)");
   }
 }
 
 void main() {
-  // 3. Create a list of vehicles and demonstrate polymorphism
+  // 3. Create a list of vehicles and demonstrate polymorphism by calling start(), stop(), and displayInfo() on each vehicle
+  // TODO: Create a list of vehicles
   List<Vehicle> vehicles = [
     Car("Toyota", "Camry", 2020, 4),
-    Motorcycle("Honda", "CBR600RR", 2021, true),
-    Car("Ford", "Mustang", 2018, 2),
+    Motorcycle("Honda", "CBR", 2021, true),
   ];
   
-  // Demonstrate polymorphism: call displayInfo(), start(), stop(), and calculateAge()
+  // TODO: Demonstrate polymorphism
   for (Vehicle vehicle in vehicles) {
     vehicle.displayInfo();
     vehicle.start();
     vehicle.stop();
-    print("${vehicle.brand} ${vehicle.model} age: ${vehicle.calculateAge()} years\n");
+    print("${vehicle.brand} age: ${vehicle.calculateAge()} years");
+    print("");
   }
 }
